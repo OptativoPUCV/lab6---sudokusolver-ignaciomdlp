@@ -44,8 +44,56 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-
-    return 1;
+   int is_valid(Node* n){
+      int i,j,k;
+      // Check rows
+      for(i=0;i<9;i++){
+         int* row = (int*) malloc(sizeof(int) * 10);
+         for(j=0;j<9;j++){
+            k = n->sudo[i][j];
+            if(k == 0) continue;
+            if(row[k] == 1){
+               free(row);
+               return 0; // Not valid
+            }
+            row[k] = 1;
+         }
+         free(row);
+      }
+      // Check columns
+      for(j=0;j<9;j++){
+         int* col = (int*) malloc(sizeof(int) * 10);
+         for(i=0;i<9;i++){
+            k = n->sudo[i][j];
+            if(k == 0) continue;
+            if(col[k] == 1){
+               free(col);
+               return 0; // Not valid
+            }
+            col[k] = 1;
+         }
+         free(col);
+      }
+      // Check 3x3 sub-grids
+      for(int box = 0; box < 9; box++){
+         int* grid = (int*) malloc(sizeof(int) * 10);
+         int start_row = (box / 3) * 3;
+         int start_col = (box % 3) * 3;
+         for(i = start_row; i < start_row + 3; i++){
+            for(j = start_col; j < start_col + 3; j++){
+               k = n->sudo[i][j];
+               if(k == 0) continue;
+               if(grid[k] == 1){
+                  free(grid);
+                  return 0; // Not valid
+               }
+               grid[k] = 1;
+            }
+         }
+         free(grid);
+      }
+      return 1; // Sudoku board is valid
+   }
 }
 
 

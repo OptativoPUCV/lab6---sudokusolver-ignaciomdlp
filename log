@@ -8,3 +8,18 @@ Thu 16 May 2024 09:25:53 PM UTC:
  tests:  2|4
 total_score: 15/70
 f5dfe8d
+Thu 16 May 2024 09:33:45 PM UTC: 
+ sudoku.c | 52 ++++++++++++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 50 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:97:1: error: control reaches end of non-void function [-Werror=return-type]
+   97 | }
+      | ^
+At top level:
+sudoku.c:47:8: error: ‘is_valid’ defined but not used [-Werror=unused-function]
+   47 |    int is_valid(Node* n){
+      |        ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+cef73d6
