@@ -94,6 +94,7 @@ List* get_adj_nodes(Node* n){
                   pushBack(adjList, adjNode);
                }
             }
+            return adjList;
          }
       }
    }
