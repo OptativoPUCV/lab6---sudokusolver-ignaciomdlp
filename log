@@ -58,3 +58,24 @@ sudoku.c:74:1: error: control reaches end of non-void function [-Werror=return-t
 cc1: all warnings being treated as errors
 Compilation failed
 07e02ae
+Thu 16 May 2024 09:47:36 PM UTC: 
+ sudoku.c | 18 ++++++++++++------
+ 1 file changed, 12 insertions(+), 6 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:68:37: error: expected statement before ‘)’ token
+   68 |       for (int j = 0; j < 9; j += 3)){
+      |                                     ^
+sudoku.c:68:7: error: this ‘for’ clause does not guard... [-Werror=misleading-indentation]
+   68 |       for (int j = 0; j < 9; j += 3)){
+      |       ^~~
+sudoku.c:68:38: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+   68 |       for (int j = 0; j < 9; j += 3)){
+      |                                      ^
+sudoku.c:71:26: error: ‘j’ undeclared (first use in this function)
+   71 |             for (int l = j; l < j + 3; l++){
+      |                          ^
+sudoku.c:71:26: note: each undeclared identifier is reported only once for each function it appears in
+cc1: all warnings being treated as errors
+Compilation failed
+e9ec03c
