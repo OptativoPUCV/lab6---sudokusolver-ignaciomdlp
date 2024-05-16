@@ -35,3 +35,26 @@ Thu 16 May 2024 09:34:42 PM UTC:
  tests:  2|4
 total_score: 15/70
 eb49183
+Thu 16 May 2024 09:43:59 PM UTC: 
+ sudoku.c | 28 +++++++++++++++++++++++++++-
+ 1 file changed, 27 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:59:59: error: expected ‘]’ before ‘)’ token
+   59 |          if (n->sudo[i][j] != 0 && col_check[n->sudo[i][j]){
+      |                                                           ^
+      |                                                           ]
+sudoku.c:70:33: error: ‘col_check’ undeclared (first use in this function)
+   70 |       if (n->sudo[i][j] != 0 && col_check[n->sudo[i][j]){
+      |                                 ^~~~~~~~~
+sudoku.c:70:33: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:70:56: error: expected ‘]’ before ‘)’ token
+   70 |       if (n->sudo[i][j] != 0 && col_check[n->sudo[i][j]){
+      |                                                        ^
+      |                                                        ]
+sudoku.c:74:1: error: control reaches end of non-void function [-Werror=return-type]
+   74 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+07e02ae
